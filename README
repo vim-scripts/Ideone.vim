@@ -1,0 +1,18 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=4042
+
+This is vimscript for ideone (http://ideone.com)
+
+Usage:
+
+  :Ideone
+    post whole text to ideone.
+
+  :'<,'>Ideone
+    post selected text to ideone.
+
+  :Ideone -p
+    post whole text to ideone with private. require username/password
+
+Require:
+  webapi-vim (http://www.vim.org/scripts/script.php?script_id=4019)
+
