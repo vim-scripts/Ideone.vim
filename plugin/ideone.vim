@@ -1,8 +1,8 @@
 "=============================================================================
 " File: ideone.vim
 " Author: Yasuhiro Matsumoto <mattn.jp@gmail.com>
-" Last Change: 28-Oct-2010.
-" Version: 0.1
+" Last Change: 08-May-2012.
+" Version: 0.02
 " WebPage: http://github.com/mattn/ideone-vim
 " License: BSD
 " Usage:
@@ -103,6 +103,7 @@ function! s:Ideone(line1, line2, ...)
       return
     endif
   endif
+  redraw | echo ""
  
   let ids = ideone#getLangIds(&ft)
   let id = ''
@@ -156,7 +157,7 @@ function! s:Ideone(line1, line2, ...)
         call ideone#openOutputBuffer(s:ideone_user, s:ideone_pass, res["link"])
       endif
     else
-      echoerr res["error"]
+      echohl ErrorMsg | echo res["error"] | echohl None
     endif
   else
     echoerr 'Invalid Response'
